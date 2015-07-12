@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["random_wheel",""]]});
+initSidebarItems({"struct":[["RandomWheel",""]]});
