@@ -164,6 +164,8 @@
 <span id="122">122</span>
 <span id="123">123</span>
 <span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
 </pre><pre class='rust '>
 <span class='comment'>/* ************************************************************************** */</span>
 <span class='comment'>/*                                                                            */</span>
@@ -173,37 +175,39 @@
 <span class='comment'>/*   By: crenault &lt;crenault@student.42.fr&gt;          +#+  +:+       +#+        */</span>
 <span class='comment'>/*                                                +#+#+#+#+#+   +#+           */</span>
 <span class='comment'>/*   Created: 2015/07/08 21:18:06 by crenault          #+#    #+#             */</span>
-<span class='comment'>/*   Updated: 2015/07/12 19:04:22 by crenault         ###   ########.fr       */</span>
+<span class='comment'>/*   Updated: 2015/07/12 22:35:00 by crenault         ###   ########.fr       */</span>
 <span class='comment'>/*                                                                            */</span>
 <span class='comment'>/* ************************************************************************** */</span>
 
-<span class='doccomment'>/*! A Little implementation of the random-wheel principle, `RandomWheel&lt;T&gt;`.
-!
-! # Examples
-!
-! You can explicitly create a `RandomWheel&lt;T&gt;` with `new()`:
-!
-! ```
-! let rw: RandomWheel&lt;i32&gt; = RandomWheel::new();
-! ```
-!
-! You can `push` values onto the random-wheel (which will grow the wheel as needed):
-!
-! Popping values works in much the same way:
-!
-! ```
-! let one = 1;
-! let two = 2;
-! {
-!     let mut rw = RandomWheel::new();
-!
-!     rw.push(&amp;one);
-!     rw.push(&amp;two);
-!
-!     let one_or_two = rw.pop();
-! }
-! ```
-!*/</span>
+<span class='comment'>/*
+A Little implementation of the random-wheel principle, `RandomWheel&lt;T&gt;`.
+
+# Examples
+
+You can explicitly create a `RandomWheel&lt;T&gt;` with `new()`:
+
+```
+let rw: RandomWheel&lt;i32&gt; = RandomWheel::new();
+```
+
+You can `push` values onto the random-wheel (which will grow the wheel as needed):
+
+Popping values works in much the same way:
+
+```
+let one = 1;
+let two = 2;
+{
+    let mut rw = RandomWheel::new();
+
+    rw.push(&amp;one);
+    rw.push(&amp;two);
+
+    let one_or_two = rw.pop();
+}
+```
+
+*/</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rand</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>linked_list</span>;
