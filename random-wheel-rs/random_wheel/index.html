@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/random_wheel/lib.rs.html#13-46' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/random_wheel/lib.rs.html#13-43' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>A Little implementation of the random-wheel principle, <code>RandomWheel&lt;T&gt;</code>.
 <a href="https://en.wikipedia.org/wiki/Fitness_proportionate_selection">https://en.wikipedia.org/wiki/Fitness_proportionate_selection</a></p>
 
@@ -64,13 +64,10 @@
 <pre id='rust-example-rendered' class='rust '>
 <span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
 
-<span class='kw'>let</span> <span class='ident'>one</span> <span class='op'>=</span> <span class='number'>1</span>;
-<span class='kw'>let</span> <span class='ident'>two</span> <span class='op'>=</span> <span class='number'>2</span>;
-
 <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
 
-<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>5.</span>, <span class='ident'>one</span>);
-<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='ident'>two</span>);
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>5.</span>, <span class='number'>1</span>);
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='number'>2</span>);
 
 <span class='comment'>// you have 5 chances out of 6 to hit $one</span>
 <span class='kw'>let</span> <span class='ident'>one_or_two</span> <span class='op'>=</span> <span class='ident'>rw</span>.<span class='ident'>pop</span>();
