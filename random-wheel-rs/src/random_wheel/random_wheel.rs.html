@@ -302,7 +302,6 @@
 <span id="260">260</span>
 <span id="261">261</span>
 <span id="262">262</span>
-<span id="263">263</span>
 </pre><pre class='rust '>
 <span class='comment'>/* ************************************************************************** */</span>
 <span class='comment'>/*                                                                            */</span>
@@ -312,7 +311,7 @@
 <span class='comment'>/*   By: crenault &lt;crenault@student.42.fr&gt;          +#+  +:+       +#+        */</span>
 <span class='comment'>/*                                                +#+#+#+#+#+   +#+           */</span>
 <span class='comment'>/*   Created: 2015/07/08 21:18:06 by crenault          #+#    #+#             */</span>
-<span class='comment'>/*   Updated: 2015/07/14 18:57:51 by crenault         ###   ########.fr       */</span>
+<span class='comment'>/*   Updated: 2015/07/14 22:02:31 by crenault         ###   ########.fr       */</span>
 <span class='comment'>/*                                                                            */</span>
 <span class='comment'>/* ************************************************************************** */</span>
 
@@ -321,7 +320,6 @@
 <span class='kw'>use</span> <span class='self'>self</span>::<span class='ident'>rand</span>::{<span class='ident'>thread_rng</span>, <span class='ident'>Rng</span>};
 
 <span class='doccomment'>/// a little implementation of a random-wheel.</span>
-<span class='doccomment'>/// https://en.wikipedia.org/wiki/Fitness_proportionate_selection</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RandomWheel</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// the sum of all probabilities in this wheel.</span>
     <span class='ident'>proba_sum</span>: <span class='ident'>f32</span>,
