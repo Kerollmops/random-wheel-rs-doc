@@ -34,7 +34,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
                        type="search">
             </div>
         </form>
@@ -355,7 +355,7 @@
 <span class='comment'>/*   By: crenault &lt;crenault@student.42.fr&gt;          +#+  +:+       +#+        */</span>
 <span class='comment'>/*                                                +#+#+#+#+#+   +#+           */</span>
 <span class='comment'>/*   Created: 2015/07/08 21:18:06 by crenault          #+#    #+#             */</span>
-<span class='comment'>/*   Updated: 2015/07/14 22:45:40 by crenault         ###   ########.fr       */</span>
+<span class='comment'>/*   Updated: 2015/10/21 22:29:16 by crenault         ###   ########.fr       */</span>
 <span class='comment'>/*                                                                            */</span>
 <span class='comment'>/* ************************************************************************** */</span>
 
@@ -422,7 +422,7 @@
     <span class='doccomment'>/// ```</span>
     <span class='doccomment'>/// use random_wheel::RandomWheel;</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// let rw: RandomWheel&lt;i32&gt; = RandomWheel::new();</span>
+    <span class='doccomment'>/// let rw: RandomWheel&lt;u8&gt; = RandomWheel::new();</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>RandomWheel</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> {
         <span class='ident'>RandomWheel</span>{
@@ -438,7 +438,7 @@
     <span class='doccomment'>/// use random_wheel::RandomWheel;</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let numbers: Vec&lt;_&gt; = (0..20).collect();</span>
-    <span class='doccomment'>/// let mut rw: RandomWheel&lt;i32&gt; = RandomWheel::with_capacity(numbers.len());</span>
+    <span class='doccomment'>/// let mut rw: RandomWheel&lt;u8&gt; = RandomWheel::with_capacity(numbers.len());</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 0);</span>
     <span class='doccomment'>/// ```</span>
@@ -456,7 +456,7 @@
     <span class='doccomment'>/// ```</span>
     <span class='doccomment'>/// use random_wheel::RandomWheel;</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// let mut rw: RandomWheel&lt;i32&gt; = RandomWheel::new();</span>
+    <span class='doccomment'>/// let mut rw: RandomWheel&lt;u8&gt; = RandomWheel::new();</span>
     <span class='doccomment'>/// rw.reserve(20);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 0);</span>
@@ -471,7 +471,7 @@
     <span class='doccomment'>/// ```</span>
     <span class='doccomment'>/// use random_wheel::RandomWheel;</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// let rw: RandomWheel&lt;i32&gt; = RandomWheel::new();</span>
+    <span class='doccomment'>/// let rw: RandomWheel&lt;u8&gt; = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// println!(&quot;actual capacity: {}&quot;, rw.capacity());</span>
     <span class='doccomment'>/// ```</span>
@@ -489,9 +489,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 0);</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
-    <span class='doccomment'>/// rw.push(1., 5);</span>
-    <span class='doccomment'>/// rw.push(1., 1);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;c&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;a&#39;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 3);</span>
     <span class='doccomment'>/// ```</span>
@@ -507,9 +507,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut rw = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
-    <span class='doccomment'>/// rw.push(1., 5);</span>
-    <span class='doccomment'>/// rw.push(1., 1);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;c&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;a&#39;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 3);</span>
     <span class='doccomment'>///</span>
@@ -531,9 +531,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.is_empty(), true);</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
-    <span class='doccomment'>/// rw.push(1., 5);</span>
-    <span class='doccomment'>/// rw.push(1., 1);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;c&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;a&#39;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.is_empty(), false);</span>
     <span class='doccomment'>/// ```</span>
@@ -549,9 +549,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut rw = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
-    <span class='doccomment'>/// rw.push(1., 5);</span>
-    <span class='doccomment'>/// rw.push(1., 1);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;c&#39;);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;a&#39;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.len(), 3);</span>
     <span class='doccomment'>/// ```</span>
@@ -569,9 +569,9 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut rw = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1.5, 20);</span>
-    <span class='doccomment'>/// rw.push(2., 5);</span>
-    <span class='doccomment'>/// rw.push(3., 1);</span>
+    <span class='doccomment'>/// rw.push(1.5, &#39;r&#39;);</span>
+    <span class='doccomment'>/// rw.push(2., &#39;c&#39;);</span>
+    <span class='doccomment'>/// rw.push(3., &#39;a&#39;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(rw.proba_sum(), 6.5);</span>
     <span class='doccomment'>/// ```</span>
@@ -610,10 +610,10 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut rw = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;20));</span>
-    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;20));</span>
+    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;&#39;r&#39;));</span>
+    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;&#39;r&#39;));</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>peek</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>T</span><span class='op'>&gt;</span> {
         <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>index</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>get_random_index</span>() {
@@ -633,10 +633,10 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut rw = RandomWheel::new();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// rw.push(1., 20);</span>
+    <span class='doccomment'>/// rw.push(1., &#39;r&#39;);</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;20));</span>
-    <span class='doccomment'>/// assert_eq!(rw.pop(), Some(20));</span>
+    <span class='doccomment'>/// assert_eq!(rw.peek(), Some(&amp;&#39;r&#39;));</span>
+    <span class='doccomment'>/// assert_eq!(rw.pop(), Some(&#39;r&#39;));</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// // once you pop the value, it doesn&#39;t exist anymore</span>
     <span class='doccomment'>/// assert_eq!(rw.peek(), None);</span>
@@ -660,37 +660,44 @@
     <section class="footer"></section>
 
     <div id="help" class="hidden">
-        <div class="shortcuts">
-            <h1>Keyboard shortcuts</h1>
-            <dl>
-                <dt>?</dt>
-                <dd>Show this help dialog</dd>
-                <dt>S</dt>
-                <dd>Focus the search field</dd>
-                <dt>&larrb;</dt>
-                <dd>Move up in search results</dd>
-                <dt>&rarrb;</dt>
-                <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
-                <dd>Go to active search result</dd>
-            </dl>
-        </div>
-        <div class="infos">
-            <h1>Search tricks</h1>
-            <p>
-                Prefix searches with a type followed by a colon (e.g.
-                <code>fn:</code>) to restrict the search to a given type.
-            </p>
-            <p>
-                Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code>, <code>enum</code>,
-                <code>trait</code>, <code>typedef</code> (or
-                <code>tdef</code>).
-            </p>
-            <p>
-                Search functions by type signature (e.g.
-                <code>vec -> usize</code>)
-            </p>
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
         </div>
     </div>
 
