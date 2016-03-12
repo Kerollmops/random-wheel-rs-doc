@@ -182,10 +182,70 @@ The collection may reserve more space to avoid frequent reallocations.</p>
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&#39;r&#39;</span>));
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&#39;r&#39;</span>));</pre>
+</div><h4 id='method.peek_mut' class='method'><code>fn <a href='#method.peek_mut' class='fnname'>peek_mut</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut T&gt;</code></h4>
+<div class='docblock'><p>returns a ref to the randomly peeked element.</p>
+
+<h1 id='example-11' class='section-header'><a href='#example-11'>Example</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
+
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='string'>&#39;r&#39;</span>);
+
+<span class='kw'>match</span> <span class='ident'>rw</span>.<span class='ident'>peek_mut</span>() {
+    <span class='prelude-val'>Some</span>(<span class='ident'>val</span>) <span class='op'>=&gt;</span> <span class='op'>*</span><span class='ident'>val</span> <span class='op'>=</span> <span class='string'>&#39;b&#39;</span>,
+    <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> {}
+}
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&#39;b&#39;</span>));</pre>
+</div><h4 id='method.peek_with_proba' class='method'><code>fn <a href='#method.peek_with_proba' class='fnname'>peek_with_proba</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, &amp;T)</a>&gt;</code></h4>
+<div class='docblock'><p>returns a ref to the randomly peeked element.</p>
+
+<h1 id='example-12' class='section-header'><a href='#example-12'>Example</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
+
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='string'>&#39;r&#39;</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek_with_proba</span>(), <span class='prelude-val'>Some</span>((<span class='number'>1.0</span>, <span class='kw-2'>&amp;</span><span class='string'>&#39;r&#39;</span>)));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek_with_proba</span>(), <span class='prelude-val'>Some</span>((<span class='number'>1.0</span>, <span class='kw-2'>&amp;</span><span class='string'>&#39;r&#39;</span>)));</pre>
+</div><h4 id='method.peek_mut_with_proba' class='method'><code>fn <a href='#method.peek_mut_with_proba' class='fnname'>peek_mut_with_proba</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, &amp;mut T)</a>&gt;</code></h4>
+<div class='docblock'><p>returns a ref to the randomly peeked element.</p>
+
+<h1 id='example-13' class='section-header'><a href='#example-13'>Example</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
+
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='string'>&#39;r&#39;</span>);
+
+<span class='kw'>match</span> <span class='ident'>rw</span>.<span class='ident'>peek_mut_with_proba</span>() {
+    <span class='prelude-val'>Some</span>((_, <span class='ident'>val</span>)) <span class='op'>=&gt;</span> <span class='op'>*</span><span class='ident'>val</span> <span class='op'>=</span> <span class='string'>&#39;b&#39;</span>,
+    <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> {}
+}
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek_with_proba</span>(), <span class='prelude-val'>Some</span>((<span class='number'>1.0</span>, <span class='kw-2'>&amp;</span><span class='string'>&#39;b&#39;</span>)));</pre>
 </div><h4 id='method.pop' class='method'><code>fn <a href='#method.pop' class='fnname'>pop</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;T&gt;</code></h4>
 <div class='docblock'><p>removes a randomly peeked element and return it.</p>
 
-<h1 id='example-11' class='section-header'><a href='#example-11'>Example</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='example-14' class='section-header'><a href='#example-14'>Example</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
+
+<span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='string'>&#39;r&#39;</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&#39;r&#39;</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>pop</span>(), <span class='prelude-val'>Some</span>(<span class='string'>&#39;r&#39;</span>));
+
+<span class='comment'>// once you pop the value, it doesn&#39;t exist anymore</span>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>peek</span>(), <span class='prelude-val'>None</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>pop</span>(), <span class='prelude-val'>None</span>);</pre>
+</div><h4 id='method.pop_with_proba' class='method'><code>fn <a href='#method.pop_with_proba' class='fnname'>pop_with_proba</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, T)</a>&gt;</code></h4>
+<div class='docblock'><p>removes a randomly peeked element and return it.</p>
+
+<h1 id='example-15' class='section-header'><a href='#example-15'>Example</a></h1><pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>random_wheel</span>::<span class='ident'>RandomWheel</span>;
 
 <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>rw</span> <span class='op'>=</span> <span class='ident'>RandomWheel</span>::<span class='ident'>new</span>();
