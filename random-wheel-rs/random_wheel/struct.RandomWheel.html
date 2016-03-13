@@ -194,6 +194,9 @@ reallocating.</p>
 <span class='ident'>rw</span>.<span class='ident'>push</span>(<span class='number'>1.</span>, <span class='string'>&#39;a&#39;</span>);
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>rw</span>.<span class='ident'>len</span>(), <span class='number'>3</span>);</pre>
+</div><h4 id='method.compute_proba_sum' class='method'><code>fn <a href='#method.compute_proba_sum' class='fnname'>compute_proba_sum</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Will recompute the probabilities sum
+use it when you iterate through this vector and change proba values</p>
 </div><h4 id='method.proba_sum' class='method'><code>fn <a href='#method.proba_sum' class='fnname'>proba_sum</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
 <div class='docblock'><p>returns total of luck you pushed.</p>
 
