@@ -530,10 +530,8 @@
 <span id="487">487</span>
 <span id="488">488</span>
 <span id="489">489</span>
-<span id="490">490</span>
 </pre><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rand</span>;
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>f32</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>repeat</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>VecDeque</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>vec_deque</span>::{ <span class='ident'>IntoIter</span>, <span class='ident'>Iter</span>, <span class='ident'>IterMut</span> };
@@ -785,7 +783,7 @@
         <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>proba</span> <span class='op'>&gt;</span> <span class='number'>0.0</span>, <span class='string'>&quot;proba {} is lower or equal to zero!&quot;</span>, <span class='ident'>proba</span>);
         <span class='self'>self</span>.<span class='ident'>cards</span>.<span class='ident'>push_back</span>((<span class='ident'>proba</span>, <span class='ident'>data</span>));
         <span class='self'>self</span>.<span class='ident'>proba_sum</span> <span class='op'>+=</span> <span class='ident'>proba</span>;
-        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>proba_sum</span> <span class='op'>==</span> <span class='ident'>f32</span>::<span class='ident'>INFINITY</span> {
+        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>proba_sum</span>.<span class='ident'>is_infinite</span>() {
             <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Probability sum reached an Inf value!&quot;</span>);
         }
     }
@@ -801,7 +799,7 @@
             <span class='ident'>sum</span> <span class='op'>+=</span> <span class='ident'>proba</span>;
         }
         <span class='self'>self</span>.<span class='ident'>proba_sum</span> <span class='op'>=</span> <span class='ident'>sum</span>;
-        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>proba_sum</span> <span class='op'>==</span> <span class='ident'>f32</span>::<span class='ident'>INFINITY</span> {
+        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>proba_sum</span>.<span class='ident'>is_infinite</span>() {
             <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Probability sum reached an Inf value!&quot;</span>);
         }
     }
