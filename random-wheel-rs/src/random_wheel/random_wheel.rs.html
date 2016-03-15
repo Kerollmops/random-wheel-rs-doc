@@ -444,6 +444,9 @@
 <span id="401">401</span>
 <span id="402">402</span>
 <span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
 </pre><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rand</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>repeat</span>;
@@ -764,7 +767,8 @@
         <span class='kw'>else</span> { <span class='prelude-val'>None</span> }
     }
 
-    <span class='doccomment'>/// returns a ref to the randomly peeked element.</span>
+    <span class='doccomment'>/// returns a ref to the randomly peeked element with</span>
+    <span class='doccomment'>/// it&#39;s probality to be peeked.</span>
     <span class='doccomment'>/// # Example</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
@@ -789,7 +793,8 @@
         <span class='kw'>else</span> { <span class='prelude-val'>None</span> }
     }
 
-    <span class='doccomment'>/// returns a ref to the randomly peeked element.</span>
+    <span class='doccomment'>/// returns a ref to the randomly peeked element with</span>
+    <span class='doccomment'>/// it&#39;s probality to be peeked.</span>
     <span class='doccomment'>/// # Example</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
@@ -818,7 +823,8 @@
         <span class='kw'>else</span> { <span class='prelude-val'>None</span> }
     }
 
-    <span class='doccomment'>/// removes a randomly peeked element and return it.</span>
+    <span class='doccomment'>/// removes a randomly peeked element and return it with</span>
+    <span class='doccomment'>/// it&#39;s probality to be peeked.</span>
     <span class='doccomment'>/// # Example</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
